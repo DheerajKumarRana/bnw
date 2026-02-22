@@ -88,25 +88,27 @@ const Footer = () => {
                         </div>
 
                         {/* Buttons & Awards (Bottom Left) */}
-                        <div className="mt-20 flex flex-col xl:flex-row items-start xl:items-center gap-8">
-                            <div className="flex flex-col md:flex-row gap-4">
-                                <a href="tel:800269823">
-                                    <button className="border border-[#daaf7d] text-white px-6 py-4 flex items-center gap-3 hover:bg-[#daaf7d] hover:text-white transition-colors min-w-[220px] justify-center h-[60px]">
-                                        <Phone size={16} className="text-[#daaf7d] group-hover:text-white" />
-                                        <div className="text-left leading-tight">
-                                            <span className="block text-xs font-bold tracking-widest text-[#daaf7d] group-hover:text-white">
+                        <div className="mt-20 flex flex-col xl:flex-row items-start xl:items-start gap-8 w-full">
+                            <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+                                <a href="tel:800269823" className="w-full md:w-auto">
+                                    <button className="thm-btn thm-btn-gold-outline group !w-full md:!min-w-[240px] !h-[75px] flex items-center justify-center px-6">
+                                        <div className="bg-[#daaf7d]/10 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                            <Phone size={18} className="text-[#daaf7d] group-hover:text-white transition-colors" />
+                                        </div>
+                                        <div className="text-center leading-tight">
+                                            <span className="block text-[14px] font-bold tracking-widest text-[#daaf7d] group-hover:text-white transition-colors uppercase">
                                                 800 BNWUAE
                                             </span>
-                                            <span className="block text-xs font-normal text-[#daaf7d] group-hover:text-white">
+                                            <span className="block text-[12px] font-normal text-[#daaf7d] group-hover:text-white transition-colors">
                                                 (269 823)
                                             </span>
                                         </div>
                                     </button>
                                 </a>
 
-                                <a href="https://wa.me/+971549994155">
-                                    <button className="thm-btn thm-btn-gold !w-full md:!min-w-[220px] !h-[60px]">
-                                        <span className="text-xs font-bold tracking-widest uppercase">
+                                <a href="https://wa.me/+971549994155" className="w-full md:w-auto">
+                                    <button className="thm-btn thm-btn-gold !w-full md:!min-w-[240px] !h-[75px] flex items-center justify-center bg-gradient-to-b from-[#e8c69f] to-[#daaf7d] border-none">
+                                        <span className="text-[14px] font-bold tracking-[0.15em] uppercase text-black">
                                             GET EXPERT HELP
                                         </span>
                                     </button>
@@ -114,18 +116,18 @@ const Footer = () => {
                             </div>
 
                             {/* Awards Images */}
-                            <div className="flex gap-4 items-center mt-6 xl:mt-0 xl:ml-6">
+                            <div className="flex gap-4 items-start mt-6 xl:mt-0 xl:ml-6">
                                 {/* Construction Week - Red Box */}
-                                <div className="h-[60px] w-auto">
-                                    <img src="/footer-award-1.jpg" alt="Construction Week" className="h-full w-auto object-contain" />
+                                <div className="w-[115px] h-[61px]">
+                                    <img src="/footer-award-1.jpg" alt="Construction Week" className="w-full h-full object-contain" />
                                 </div>
                                 {/* Great Place to Work */}
-                                <div className="h-[60px] w-auto">
-                                    <img src="/footer-award-2.png" alt="Great Place to Work" className="h-full w-auto object-contain" />
+                                <div className="h-[61px] w-auto">
+                                    <img src="/footer-award-2.png" alt="Great Place to Work" className="w-full h-full object-contain" />
                                 </div>
                                 {/* Property Awards - Tall Ribbon */}
-                                <div className="h-[140px] w-auto -mt-6">
-                                    <img src="/footer-award-3.png" alt="Property Awards" className="h-full w-auto object-contain drop-shadow-lg" />
+                                <div className="w-[80px] h-[280px] relative">
+                                    <img src="/footer-award-3.png" alt="Property Awards" className="w-full h-full object-contain drop-shadow-lg" />
                                 </div>
                             </div>
                         </div>
@@ -135,8 +137,8 @@ const Footer = () => {
                     <div className="lg:col-span-5 flex flex-col items-start lg:pl-10">
                         {/* Logo Section */}
                         <div className="flex items-center gap-6 mb-4">
-                            <div className="w-[84px]">
-                                <Image src="/logo-white.png" alt="BNW Logo" width={100} height={80} className="w-full h-auto" />
+                            <div className="w-[115px] h-[60px] flex items-center justify-center">
+                                <Image src="/logo-white.png" alt="BNW Logo" width={115} height={60} className="w-full h-auto max-h-full object-contain" />
                             </div>
                             <div className="flex flex-col border-l border-gray-600 pl-6 h-[60px] justify-center">
                                 <span className="text-xl font-normal tracking-[0.15em] text-white uppercase font-sans">BNW DEVELOPMENTS</span>

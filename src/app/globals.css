@@ -162,33 +162,40 @@ a {
   transform-origin: left;
 }
 
-/* Gold Button (Shine Effect) */
+/* Gold Button (Solid Fills White or Gold? - User asked for fill animation) */
 .thm-btn-gold {
   background-color: #daaf7d;
   border-color: #daaf7d;
   color: #fff;
 }
 
-.thm-btn-gold::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg,
-      transparent,
-      rgba(255, 255, 255, 0.4),
-      transparent);
-  transition: all 0.6s ease;
-}
-
-.thm-btn-gold:hover::after {
-  left: 100%;
+.thm-btn-gold::before {
+  background-color: #fff;
 }
 
 .thm-btn-gold:hover {
-  background-color: #c59d6e;
+  color: #daaf7d;
+}
+
+/* Gold Outline Button (Transparent, Fills Gold) */
+.thm-btn-gold-outline {
+  background-color: transparent !important;
+  color: #daaf7d !important;
+  border-color: #daaf7d !important;
+}
+
+.thm-btn-gold-outline::before {
+  background-color: #daaf7d !important;
+}
+
+.thm-btn-gold-outline:hover {
+  color: #fff !important;
+}
+
+.thm-btn-gold-outline:hover span,
+.thm-btn-gold-outline:hover div,
+.thm-btn-gold-outline:hover svg {
+  color: #fff !important;
 }
 
 .gold-text {
@@ -198,4 +205,30 @@ a {
 .bg-dark {
   background-color: var(--secondary);
   color: #fff;
+}
+
+/* Card Shine Effect */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
+  transition: all 0.8s ease;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.card-shine:hover::after {
+  left: 150%;
 }

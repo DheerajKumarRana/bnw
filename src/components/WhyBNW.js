@@ -79,7 +79,7 @@ const WhyBNW = () => {
                 </div>
 
                 {/* Features Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-6 md:gap-y-10">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 gap-y-6 md:gap-y-10">
                     {features.map((item, idx) => (
                         <div
                             key={idx}
