@@ -21,12 +21,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${lato.variable} ${notoSerif.variable}`}>
-        <SingleNewsNavbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <>
+      <SingleNewsNavbar />
+      { children }
+      <Footer />
+    </>
   );
 }

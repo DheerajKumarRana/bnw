@@ -157,9 +157,9 @@ const SingleNewsNavbar = () => {
                         <nav className="text-sm font-medium text-gray-400">
                             <ol className="flex items-center space-x-2">
                                 <li>
-                                    <a href="#" className="hover:text-white transition-colors">
+                                    <Link href="/" className="hover:text-white transition-colors">
                                         Home
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="text-gray-500">/</li>
                                 <li className="text-white font-semibold">

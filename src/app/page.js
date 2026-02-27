@@ -8,8 +8,12 @@ import LatestLaunch from "@/components/LatestLaunch";
 import PremiumDevelopments from "@/components/PremiumDevelopments";
 import OurVerticals from "@/components/OurVerticals";
 import Footer from "@/components/Footer";
+import { getAllNews } from "@/lib/news";
 
-export default function Home() {
+export default async function Home() {
+
+  const articles = await getAllNews();
+
   return (
     <main className="bg-white min-h-screen">
       <Navbar />
@@ -20,7 +24,7 @@ export default function Home() {
       <LatestLaunch />
       <PremiumDevelopments />
       <WhyBNW />
-      <OurVerticals />
+      <OurVerticals articles={ articles } />
       <Footer />
     </main>
   );
