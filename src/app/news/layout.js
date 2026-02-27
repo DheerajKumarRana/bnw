@@ -19,12 +19,14 @@ export const metadata = {
   description: "Legacy that Leads, Innovation that Lasts. Premier real estate developer in UAE.",
 };
 
-export default function RootLayout({ children }) {
+export default function NewsLayout({ children }) {
   return (
-    <>
+    <div className={`${lato.variable} ${notoSerif.variable} min-h-screen flex flex-col`}>
       <SingleNewsNavbar />
-      { children }
+      <main className="flex-grow">
+        {children}
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }

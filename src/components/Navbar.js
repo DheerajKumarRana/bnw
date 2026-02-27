@@ -44,10 +44,10 @@ const Navbar = () => {
 
     const navLinks = [
         { name: "Home", href: "/" },
-        { name: "About Us", href: "/about-us" },
-        { name: "Portfolio", href: "#" },
+        { name: "About us", href: "/about-us" },
+        { name: "Real Estate", href: "#" },
         { name: "News & Media", href: "/news" },
-        { name: "Contact Us", href: "/contact-us" },
+        { name: "Contact us", href: "/contact-us" }
     ];
 
     return (
@@ -159,57 +159,53 @@ const Navbar = () => {
             {/* Mobile Menu Overlay */}
             <AnimatePresence>
                 {isMenuOpen && (
-                    <motion.div
-                        initial="closed"
-                        animate="open"
-                        exit="closed"
-                        variants={menuVariants}
-                        className="fixed inset-0 bg-[#0a0a0a] z-50 flex flex-col items-center justify-center p-5 text-white overflow-y-auto"
-                    >
-                        {/* Close Button */}
-                        <button
-                            onClick={toggleMenu}
-                            className="absolute top-6 right-6 text-white hover:text-[#daaf7d] transition-colors"
-                        >
-                            <X size={40} strokeWidth={1} />
-                        </button>
-
-                        {/* Links */}
-                        <nav className="flex flex-col items-center gap-8 mb-10 w-full">
-                            {navLinks.map((link, i) => (
-                                <motion.div
-                                    key={i}
-                                    custom={i}
-                                    variants={linkVariants}
-                                    className="w-full text-center"
-                                >
-                                    <Link
-                                        href={link.href}
-                                        onClick={toggleMenu}
-                                        className="text-3xl font-noto hover:text-[#daaf7d] transition-colors inline-block"
-                                    >
-                                        {link.name}
-                                    </Link>
-                                </motion.div>
-                            ))}
-                        </nav>
-
-                        {/* Mobile Contact Info */}
+                    <>
                         <motion.div
-                            variants={linkVariants}
-                            custom={5}
-                            className="flex flex-col items-center gap-6 mt-5 w-full border-t border-gray-800 pt-10"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={toggleMenu}
+                            className="fixed inset-0 bg-black/60 z-40"
+                        />
+                        <motion.div
+                            initial="closed"
+                            animate="open"
+                            exit="closed"
+                            variants={menuVariants}
+                            className="fixed top-0 right-0 bottom-0 w-full md:w-[400px] bg-[#02060A] z-50 flex flex-col items-start p-6 md:p-10 text-white overflow-y-auto border-l border-white/10"
                         >
-                            <a href="tel:800269823" className="flex items-center gap-3 text-white hover:text-[#daaf7d]">
-                                <Phone size={20} />
-                                <span className="text-xl font-bold">800 BNWUAE</span>
-                            </a>
+                            {/* Header */}
+                            <div className="flex justify-between items-center w-full pb-6 border-b border-white/20 mb-8 pt-4 md:pt-0">
+                                <span className="text-2xl font-normal">Menu</span>
+                                <button
+                                    onClick={toggleMenu}
+                                    className="text-white hover:text-[#daaf7d] transition-colors"
+                                >
+                                    <X size={36} strokeWidth={1} />
+                                </button>
+                            </div>
 
-                            <button className="bg-[#daaf7d] text-white px-8 py-4 w-full max-w-xs uppercase font-bold tracking-widest text-sm hover:bg-white hover:text-[#daaf7d] transition-colors">
-                                Register Interest
-                            </button>
+                            {/* Links */}
+                            <nav className="flex flex-col w-full">
+                                {navLinks.map((link, i) => (
+                                    <motion.div
+                                        key={i}
+                                        custom={i}
+                                        variants={linkVariants}
+                                        className="w-full border-b border-white/10"
+                                    >
+                                        <Link
+                                            href={link.href}
+                                            onClick={toggleMenu}
+                                            className="text-lg md:text-[19px] font-medium py-4 block hover:text-[#daaf7d] transition-colors"
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    </motion.div>
+                                ))}
+                            </nav>
                         </motion.div>
-                    </motion.div>
+                    </>
                 )}
             </AnimatePresence>
         </>
