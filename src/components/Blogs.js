@@ -6,7 +6,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import Link from "next/link";
 
-export default function RelatedArticles({ articles }) {
+export default function Blogs({ articles }) {
     const [mounted, setMounted] = useState(false);
 
     const prevRef = useRef(null);
@@ -23,24 +23,16 @@ export default function RelatedArticles({ articles }) {
                 rel="stylesheet"
             />
 
-            <section className="bg-[#0a0a0a] px-5 lg:px-14 pt-14 pb-20">
+            <section className="bg-white px-5 lg:px-14 pt-14 pb-20">
                 {/* Heading */ }
                 <h2
-                    className="text-white font-noto uppercase tracking-[0.15em] text-2xl md:text-4xl mb-10 max-w-7xl mx-auto"
+                    className="text-black font-noto text-center uppercase tracking-[0.15em] text-2xl md:text-4xl mb-10 max-w-7xl mx-auto"
                 >
-                    Related Articles
+                    BNW in Media
                 </h2>
 
                 {/* Outer wrapper: clips the swiper strictly */ }
                 <div className="relative overflow-hidden max-w-7xl mx-auto">
-
-                    {/* Left edge fade — blurs/fades cards as they exit left */ }
-                    <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 md:w-28 z-10 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent" />
-
-                    {/* Right edge fade — blurs/fades cards as they exit right */ }
-                    <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 md:w-28 z-10 bg-gradient-to-l from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent" />
-
-                    <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-10 z-10 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent" />
 
                     {/* Prev button overlaid on left fade */ }
                     <button
@@ -93,50 +85,58 @@ export default function RelatedArticles({ articles }) {
 }
 
 function ArticleCard({ article }) {
+    // Format date as DD.MM.YYYY
+    const formattedDate = article.date
+        ? new Date(article.date).toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+          }).replace(/\//g, ".")
+        : "";
+
     return (
-        <div
-            className="group relative overflow-hidden rounded-[3px] cursor-pointer bg-neutral-900"
-            style={ { aspectRatio: "4 / 3" } }
-        >
-            <Link
-                href={ `/news/${article.slug}` }
-            >
-                {/* Image */ }
-                { article.images && article.images.length > 0 && <img
-                    src={ article.images[0] }
-                    alt={ article.title }
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                /> }
+        <div className="group rounded-[3px] overflow-hidden cursor-pointer bg-white">
+            <Link href={`/news/${article.slug}`}>
+                {/* Image — fixed aspect ratio, no overlay */}
+                <div className="relative overflow-hidden w-full" style={{ aspectRatio: "4 / 3" }}>
+                    {article.images && article.images.length > 0 && (
+                        <img
+                            src={article.images[0]}
+                            alt={article.title}
+                            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                    )}
+                </div>
 
-                {/* Gradient overlay */ }
-                <div
-                    className="absolute inset-0"
-                    style={ {
-                        background:
-                            "linear-gradient(to top, rgba(0,0,0,0.93) 0%, rgba(0,0,0,0.48) 45%, rgba(0,0,0,0.06) 100%)",
-                    } }
-                />
+                {/* Text content — below image */}
+                <div className=" pt-3 pb-5">
+                    {/* Date */}
+                    {formattedDate && (
+                        <p
+                            className="text-neutral-400 text-[0.72rem] tracking-[0.06em] mb-2"
+                            style={{ fontFamily: "'Montserrat', sans-serif" }}
+                        >
+                            {formattedDate}
+                        </p>
+                    )}
 
-                {/* Text content */ }
-                <div className="absolute bottom-0 left-0 right-0 p-6 pb-8">
+                    {/* Title */}
                     <p
-                        className="text-white/80 leading-relaxed mb-1 text-[1.05rem] tracking-[0.01em]"
-                        style={ { fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 400 } }
+                        className="text-black font-lato leading-snug mb-1 text-xs tracking-[0.01em]"
                     >
-                        { article.title }
+                        {article.title}
                     </p>
 
-                    <button
+                    {/* Read More */}
+                    <span
                         className="
-            text-[#c9a96e] uppercase text-[0.65rem] tracking-[0.12em]
-            bg-transparent border-0 p-0 cursor-pointer font-medium
-            transition-all duration-300
-            hover:tracking-[0.18em] hover:opacity-75
-          "
-                        style={ { fontFamily: "'Montserrat', sans-serif" } }
+                            text-[#c9a96e] uppercase text-[0.65rem] tracking-[0.12em]
+                            font-medium transition-all duration-300
+                            group-hover:tracking-[0.18em] font-lato group-hover:opacity-75
+                        "
                     >
                         Read More &gt;
-                    </button>
+                    </span>
                 </div>
             </Link>
         </div>

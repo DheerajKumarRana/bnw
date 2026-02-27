@@ -39,7 +39,7 @@ const LatestLaunch = () => {
                             <a
                                 href={project.detailsLink}
                                 className="order-2 md:order-1 text-[12px] md:text-xs font-bold tracking-[0.2em] uppercase text-black hover:text-[#daaf7d] transition-colors
-                                           w-full md:w-auto py-5 md:py-0 border border-black md:border-none flex justify-center items-center"
+                                           w-full md:w-auto py-5 md:px-8 border border-black flex justify-center items-center"
                             >
                                 PROJECT DETAILS
                             </a>

@@ -47,7 +47,7 @@ const Navbar = () => {
         { name: "About us", href: "/about-us" },
         { name: "Real Estate", href: "#" },
         { name: "News & Media", href: "/news" },
-        { name: "Contact us", href: "/contact-us" },
+        { name: "Contact us", href: "/contact-us" }
     ];
 
     return (
