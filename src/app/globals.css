@@ -242,3 +242,18 @@ a {
 .markdown a {
   color: #BF9E77;
 } */
+
+/* Project listing */
+
+@keyframes arrowBounce {
+    0%,
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(10px);
+        opacity: 0.5;
+    }
+}
