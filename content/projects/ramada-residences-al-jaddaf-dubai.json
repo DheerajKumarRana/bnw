@@ -4,5 +4,6 @@
   "description": "Ramada Residences by Wyndham in Al Jaddaf offers luxury 1 & 2 bedroom apartments with smart design, timeless finishes, and wellness-driven amenities.",
   "image": "/ramada-residences-al-jaddaf-dubai.png",
   "startingFrom": "AED 1.85 Million",
-  "apartmentTypes": "1, 2, 3 Bedroom Apartments and Penthouses"
+  "apartmentTypes": "1, 2, 3 Bedroom Apartments and Penthouses",
+  "order": 10
 }

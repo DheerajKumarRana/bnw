@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const ListingHero = () => {
     return (
@@ -17,7 +18,7 @@ const ListingHero = () => {
                 <div className="container mx-auto px-5 mt-8 z-10 relative h-[65%] flex flex-col justify-between">
                     {/* Breadcrumb */}
                     <nav className="flex items-center gap-2 text-md font-lato text-white/70 mb-6">
-                        <a href="/" className="hover:text-white transition-colors">Home</a>
+                        <Link href="/" className="hover:text-white transition-colors">Home</Link>
                         <span className="text-white/40">/</span>
                         <span className="text-white">BNW Projects</span>
                     </nav>
@@ -63,10 +64,10 @@ const ListingHero = () => {
 
 
                 {/* Breadcrumb — top left */}
-                <nav className="absolute top-28 max-w-7xl left-40 z-10 flex items-center gap-2 text-sm text-white/70">
-                    <a href="/" className="hover:text-white transition-colors duration-200">
+                <nav className="absolute top-28 max-w-7xl left-40 z-50 flex items-center gap-2 text-sm text-white/70">
+                    <Link href="/" className="hover:text-white transition-colors duration-200">
                         Home
-                    </a>
+                    </Link>
                     <span className="text-white/40">/</span>
                     <span className="text-white">BNW Projects</span>
                 </nav>

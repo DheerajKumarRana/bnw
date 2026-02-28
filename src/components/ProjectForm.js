@@ -7,7 +7,7 @@ export default function ProjectForm() {
     const [phone, setPhone] = useState("");
 
     return (
-        <div id="ProjectForm" className="py-16 md:py-28 bg-black flex items-center justify-center p-4">
+        <div id="ProjectForm" className="py-16 px-6 md:py-28 bg-black flex items-center justify-center p-4">
             {/* Desktop Layout */ }
             <div
                 className="w-full max-w-6xl hidden md:flex items-center rounded-sm overflow-hidden"
@@ -55,18 +55,18 @@ export default function ProjectForm() {
                         <input
                             type="email"
                             placeholder="Email"
-                            className="w-full px-4 py-3 text-sm outline-none bg-white border-0"
+                            className="w-full  text-black px-4 py-3 text-sm outline-none bg-white border-0"
                         />
                         <div className="flex items-center bg-white px-4 py-3 gap-2">
-                            <span className="text-base">🇦🇪</span>
+                            <div><img alt="UAE Flag" className="min-w-5 w-5" src="https://flagcdn.com/w20/ae.png" /></div>
                             <span className="text-sm text-gray-400">▼</span>
-                            <span className="text-sm text-gray-500 ml-1">+971</span>
+                            <span className="text-sm text-black  ml-1">+971</span>
                             <input
                                 type="tel"
                                 value={ phone }
                                 onChange={ (e) => setPhone(e.target.value) }
-                                className="flex-1 outline-none text-sm ml-2 bg-transparent"
-                                placeholder=""
+                                className="flex-1 text-black outline-none text-sm ml-2 bg-transparent"
+                                placeholder="Phone"
                             />
                         </div>
 
@@ -99,11 +99,11 @@ export default function ProjectForm() {
 
             {/* Mobile Layout */ }
             <div
-                className="w-full max-w-sm md:hidden rounded-sm px-8 py-10"
+                className="w-full max-w-sm md:hidden rounded-sm px-4 py-10"
                 style={ { backgroundColor: "#f5ede4" } }
             >
                 <h2
-                    className="text-4xl font-serif text-center leading-tight mb-5"
+                    className="text-2xl font-serif text-center leading-tight mb-5"
                     style={ { color: "#8b6f3e", fontFamily: "Georgia, serif" } }
                 >
                     REGISTER YOUR
@@ -125,16 +125,16 @@ export default function ProjectForm() {
                     <input
                         type="email"
                         placeholder="Email"
-                        className="w-full px-4 py-3 text-sm outline-none bg-white border-0"
+                        className="w-full text-black px-4 py-3 text-sm outline-none bg-white border-0"
                     />
                     <div className="flex items-center bg-white px-4 py-3 gap-2">
-                        <span className="text-base">🇦🇪</span>
-                        <span className="text-sm text-gray-400">▼</span>
-                        <span className="text-sm text-gray-500 ml-1">+971</span>
+                        <div><img alt="UAE Flag" className="w-10" src="https://flagcdn.com/w20/ae.png" /></div>
+                        <span className="min-w-5 text-sm text-gray-400">▼</span>
+                        <span className="text-sm text-black ml-1">+971</span>
                         <input
                             type="tel"
-                            className="flex-1 outline-none text-sm ml-2 bg-transparent"
-                            placeholder=""
+                            className="flex-1 outline-none text-black text-sm ml-2 bg-transparent"
+                            placeholder="Phone"
                         />
                     </div>
 

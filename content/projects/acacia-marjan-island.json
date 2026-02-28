@@ -4,5 +4,6 @@
   "description": "Introducing Acacia by BNW Developments - Fashion Finds A New Address",
   "image": "/acacia-marjan-island.png",
   "startingFrom": "AED 1.96 Million",
-  "apartmentTypes": "1 - 3 BR Apartments and 4 BR Penthouses"
+  "apartmentTypes": "1 - 3 BR Apartments and 4 BR Penthouses",
+  "order": 5
 }

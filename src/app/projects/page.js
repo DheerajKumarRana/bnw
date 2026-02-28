@@ -20,7 +20,7 @@ export default async function ProjectsPage() {
       <ListingHero />
       <ListingDesc />
       <section
-        className="min-h-screen px-6 md:px-12 lg:px-20 pb-28"
+        className="px-6 md:px-12 lg:px-20 lg:pb-28"
         style={ { backgroundColor: "#000" } }
       >
         <div className="max-w-7xl mx-auto">
@@ -34,38 +34,3 @@ export default async function ProjectsPage() {
     </>
   );
 }
-
-// function ProjectCard({ project }) {
-//   return (
-//     <div
-//       className="relative overflow-hidden rounded-sm cursor-pointer group"
-//       style={ { aspectRatio: "4/3" } }
-//     >
-//       <Link href={ `/projects/${project.slug}` }>
-//         { project.images && project.images.length > 0 && (
-//           <img
-//             src={ project.images[0] }
-//             alt={ project.title }
-//             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-//           />
-//         ) }
-
-//         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80" />
-
-//         <div className="absolute bottom-0 left-0 right-0 p-5">
-//           <h3 className="text-white leading-snug mb-3 transition-all duration-300 font-lato font-medium">
-//             { project.title }
-//           </h3>
-//           { project.description && (
-//             <p className="text-white/70 text-sm mb-3 line-clamp-2">
-//               { project.description }
-//             </p>
-//           ) }
-//           <button className="inline-flex items-center font-lato text-[#bf9e77] text-sm font-medium tracking-wide">
-//             View Project &gt;
-//           </button>
-//         </div>
-//       </Link>
-//     </div>
-//   );
-// }

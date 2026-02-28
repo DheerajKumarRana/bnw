@@ -42,7 +42,7 @@ export default async function SingleProjectPage({ params }) {
     <>
       <SingleListingHero project={ project } />
       <div className="min-h-screen bg-stone-50">
-        <main className="mx-auto py-12 sm:py-16">
+        <main className="mx-auto py-4">
           { project.contentHtml && (
             <ProjectContent html={ project.contentHtml } />
           ) }
