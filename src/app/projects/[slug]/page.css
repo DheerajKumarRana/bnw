@@ -36,7 +36,7 @@
     font-size: 16px;
     line-height: 1.85;
     color: #000;
-    max-width: 860px;
+    max-width: 1200px;
     margin: 0 auto 60px;
     font-weight: 400;
 }
@@ -136,7 +136,7 @@
     }
 
     .rbr-wrapper {
-        padding: 0;
+        padding: 30px 0;
         padding-inline: 1.5rem;
     }
 
@@ -161,7 +161,6 @@
 .hero-text .hero-head {
     font-family: 'Noto';
     font-size: 35px;
-    letter-spacing: 0.08em;
     color: #1a1a1a;
     text-transform: uppercase;
     line-height: 1.1;
@@ -220,10 +219,10 @@
 }
 
 .prox-icon-wrap {
-    width: 72px;
-    height: 72px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background: #c9ad87;
+    background: #be9c76;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -303,14 +302,13 @@
 .fpp-section {
     background-color: #f0ece6;
     padding: 40px 40px 40px;
-    font-family: 'Jost', sans-serif;
     box-sizing: border-box;
 }
 
 .fpp-title {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 400;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: 35px;
     text-align: center;
     color: #1a1a1a;
     margin: 0 0 52px;
@@ -392,6 +390,7 @@
     .fpp-title {
         padding: 0 24px;
         margin-bottom: 36px;
+        font-size: 24px;
     }
 
     .fpp-grid {

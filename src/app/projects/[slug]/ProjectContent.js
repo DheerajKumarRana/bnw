@@ -2,6 +2,7 @@ import parse from "html-react-parser";
 import GallerySlider from "./components/GallerySlider";
 import AmenitiesSlider from "./components/AmenitiesSlider";
 import FAQSection from "./components/FaqSection";
+import NormalSlider from "./components/NormalSlider";
 
 export function ProjectContent({ html }) {
     return parse(html, {
@@ -29,7 +30,9 @@ export function ProjectContent({ html }) {
                     title: titles[index]?.trim() ?? ""
                 }));
 
-                return <AmenitiesSlider slides={ slides } />
+                const heading = node.attribs["data-heading"] ? node.attribs["data-heading"] : "AMENITIES";
+
+                return <AmenitiesSlider slides={ slides } heading={ heading } />
             } else if (
                 node.attribs &&
                 node.attribs["data-component"] == "faq"
@@ -47,7 +50,23 @@ export function ProjectContent({ html }) {
                     console.error("FAQ JSON parse error", jsonText);
                     return null;
                 }
+            } else if (
+                node.attribs &&
+                node.attribs["data-component"] == "NormalSlider"
+            ) {
+                const images =
+                    node.attribs["data-images"]?.split(",") ?? [];
+
+                const titles =
+                    node.attribs["data-titles"]?.split(",") ?? [];
+
+                const slides = images.map((icon, index) => ({
+                    image: icon?.trim(),
+                    title: titles[index]?.trim() ?? ""
+                }));
+
+                return <NormalSlider slides={ slides } />
             }
-        },
+        }
     });
 }

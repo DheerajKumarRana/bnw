@@ -75,7 +75,7 @@ export default function GallerySlider({ slides }) {
                 >
                     { slides.map((slide) => (
                         <SwiperSlide key={ slide.id }>
-                            <div className="overflow-hidden rounded-sm cursor-pointer aspect-[4/3]">
+                            <div className="overflow-hidden rounded-sm cursor-pointer aspect-[16/9]">
                                 <img
                                     src={ slide }
                                     alt={ "img" }

@@ -9,7 +9,7 @@ import 'swiper/css/navigation';
 import Image from 'next/image';
 
 
-export default function AmenitiesSlider({ slides }) {
+export default function AmenitiesSlider({ slides, heading }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
@@ -17,9 +17,9 @@ export default function AmenitiesSlider({ slides }) {
     <section className="w-full py-12 px-4">
       {/* Title */ }
       <h2
-        className="text-center text-3xl md:text-4xl lg:text-4xl tracking-[0.3em] text-black font-noto mb-12"
+        className="text-center text-3xl md:text-4xl lg:text-4xl text-black font-noto mb-12"
       >
-        AMENITIES
+        { heading }
       </h2>
 
       {/* Slider wrapper */ }
@@ -56,10 +56,10 @@ export default function AmenitiesSlider({ slides }) {
                 <div className="flex justify-center">
                   <Image
                     src={ item.icon }
-                    width={100}
-                    height={100}
+                    width={ 60 }
+                    height={ 60 }
                     alt='icon Alt'
-                    className='w-1/2 rounded-lg'
+                    className='w-1/3 rounded-lg'
                   />
                 </div>
                 <div className="text-center">

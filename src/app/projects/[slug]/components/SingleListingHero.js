@@ -63,7 +63,7 @@ const SingleListingHero = ({ project }) => {
 
 
                 {/* Breadcrumb — top left */ }
-                <nav className="absolute top-36 max-w-7xl left-40 z-10 flex items-center gap-2 text-sm text-white/70">
+                <nav className="absolute top-36 max-w-7xl left-40 z-50 flex items-center gap-2 text-sm text-white/70">
                     <Link href="/" className="hover:text-white transition-colors duration-200">
                         Home
                     </Link>

@@ -5,7 +5,7 @@ export default function ProjectCard({ project }) {
 
     return (
         <div
-            className="relative flex flex-col items-center font-noto bg-black"
+            className="relative md:px-8 flex flex-col items-center font-noto bg-black"
         >
 
             {/* Title */ }
@@ -22,9 +22,10 @@ export default function ProjectCard({ project }) {
 
             {/* Hero Image */ }
             { project && project.image && <div
-                className="relative w-full max-w-7xl mx-auto px-0 md:px-8"
+                className="relative w-full max-w-7xl mx-auto px-0 overflow-hidden"
             >
-                <div
+                <Link
+                    href={`/projects/${project.slug}`}
                     className="relative w-full overflow-hidden"
                     style={ {
                         aspectRatio: "16/9",
@@ -34,12 +35,12 @@ export default function ProjectCard({ project }) {
                 >
                     <Image
                         src={ `${project.image}` }
-                        width={ 400 }
-                        height={ 300 }
-                        className="w-full"
+                        width={ 1440 }
+                        height={ 850 }
+                        className="w-full hover:scale-110 transition duration-500"
                         alt="Image"
                     />
-                </div>
+                </Link>
             </div> }
 
             <div
