@@ -47,6 +47,7 @@ const SingleNewsNavbar = () => {
         { name: "About us", href: "/about-us" },
         { name: "Real Estate", href: "#" },
         { name: "News & Media", href: "/news" },
+        { name: "Projects", href: "/projects" },
         { name: "Contact us", href: "/contact-us" },
     ];
 
