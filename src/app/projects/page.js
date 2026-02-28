@@ -20,7 +20,7 @@ export default async function ProjectsPage() {
       <ListingHero />
       <ListingDesc />
       <section
-        className="min-h-screen px-6 md:px-12 lg:px-20 pb-28"
+        className="px-6 md:px-12 lg:px-20 lg:pb-28"
         style={ { backgroundColor: "#000" } }
       >
         <div className="max-w-7xl mx-auto">

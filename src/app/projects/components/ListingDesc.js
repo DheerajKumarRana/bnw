@@ -97,13 +97,13 @@ export default function ListingDesc() {
 
       <section
         ref={sectionRef}
-        className="w-full py-20 px-6 md:px-16 bg-black"
+        className="w-full py-4 md:py-20 px-6 md:px-16 bg-black"
       >
         <div className="max-w-5xl mx-auto">
           {/* Description */}
           <p
             className={`
-              text-center text-[#cccccc] text-sm md:text-base leading-8 tracking-wide mb-16 max-w-3xl mx-auto
+              text-center text-[#cccccc] text-sm md:text-base leading-8 tracking-wide mb-8 md:mb-16 max-w-3xl mx-auto
               font-lato 
               transition-all duration-700
               ${animate ? "opacity-100 translate-y-0"    : "opacity-0 translate-y-4"}

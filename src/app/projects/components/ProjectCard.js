@@ -22,7 +22,7 @@ export default function ProjectCard({ project }) {
 
             {/* Hero Image */ }
             { project && project.image && <div
-                className="relative w-full max-w-7xl mx-auto px-4 md:px-8"
+                className="relative w-full max-w-7xl mx-auto px-0 md:px-8"
             >
                 <div
                     className="relative w-full overflow-hidden"
@@ -43,7 +43,7 @@ export default function ProjectCard({ project }) {
             </div> }
 
             <div
-                className="w-full max-w-7xl mx-auto px-4 md:px-8 mt-12 pb-16"
+                className="w-full max-w-7xl mx-auto px-0 md:px-8 mt-12 pb-4 lg:pb-16"
             >
                 <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-16">
                     {/* Left: label + heading */ }
