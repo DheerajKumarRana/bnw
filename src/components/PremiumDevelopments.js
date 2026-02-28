@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState, useMemo } from "react";
 import Slider from "react-slick";
 
@@ -69,61 +70,71 @@ const PremiumDevelopments = () => {
             images: ["/project-1.png", "/project-2.jpg"],
             name: "Pelagia",
             location: "Al Marjan Island",
-            category: "Al Marjan Island"
+            category: "Al Marjan Island",
+            slug: "pelagia-marjan-island"
         },
         {
             images: ["/project-2.jpg", "/project-3.jpg"],
             name: "Aqua Arc",
             location: "Al Marjan Island",
-            category: "Al Marjan Island"
+            category: "Al Marjan Island",
+            slug: "aqua-arc-marjan-island"
         },
         {
             images: ["/project-3.jpg"],
             name: "Tonino Lamborghini Residences",
             location: "Al Marjan Island",
-            category: "Al Marjan Island"
+            category: "Al Marjan Island",
+            slug: "tonino-lamborghini-residences-marjan-island"
         },
         {
             images: ["/launch-1.jpg", "/launch-3.jpg"],
             name: "La Perla",
             location: "Al Marjan Island",
-            category: "Al Marjan Island"
+            category: "Al Marjan Island",
+            slug: "la-perla-marjan-island"
         },
         {
             images: ["/launch-3.jpg"],
             name: "Aqua Maya",
             location: "Al Marjan Island",
-            category: "Al Marjan Island"
+            category: "Al Marjan Island",
+            slug: "aqua-maya-marjan-island"
         },
         {
             images: ["/launch-2.jpg"],
             name: "Ramada Residences",
             location: "Al Jaddaf, Dubai",
-            category: "Dubai"
+            category: "Dubai",
+            slug: "ramada-residences-al-jaddaf-dubai"
         },
         {
             images: ["/project-2.jpg"],
             name: "Aquino",
             location: "Al Marjan Island",
-            category: "Al Marjan Island"
+            category: "Al Marjan Island",
+            slug: "aquino-marjan-island"
         },
         {
             images: ["/launch-1.jpg"],
             name: "Radisson Blu Residences & Hotel",
             location: "RAK Central",
-            category: "RAK Central"
+            category: "RAK Central",
+            slug: "radisson-blu-residences-hotel-rak-central"
         },
         {
             images: ["/project-1.png"],
             name: "Acacia",
             location: "Al Marjan Island",
-            category: "Al Marjan Island"
+            category: "Al Marjan Island",
+            slug: "acacia-marjan-island"
         },
         {
             images: ["/project-3.jpg"],
             name: "Taj Wellington Mews",
             location: "Al Marjan Island",
-            category: "Al Marjan Island"
+            category: "Al Marjan Island",
+            slug: "taj-wellington-mews-marjan-island"
         }
     ];
 
@@ -198,9 +209,9 @@ const PremiumDevelopments = () => {
 
                                     {/* Content Bottom */}
                                     <div className="absolute bottom-10 w-full flex flex-col items-center px-6">
-                                        <button className="thm-btn thm-btn-gold !h-[45px] !w-[180px] text-[10px] transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                                        <Link href={`/projects/${project.slug}`} className="thm-btn thm-btn-gold !h-[45px] !w-[180px] text-[10px] transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
                                             Visit Property &gt;
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
