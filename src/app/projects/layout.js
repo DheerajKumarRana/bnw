@@ -21,12 +21,10 @@ export const metadata = {
 
 export default function ProjectLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${lato.variable} ${notoSerif.variable}`}>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <>
+      <Navbar />
+      { children }
+      <Footer />
+    </>
   );
 }

@@ -41,13 +41,21 @@ export function getAllProjects(limit = 20, skip = 0) {
   try {
     const slugs = getProjectSlugs();
     
-    return slugs.slice(skip, skip + limit).map(slug => {
+    const projects = slugs.map(slug => {
       const metadata = getJsonMetadata(slug);
       return {
         slug,
         ...metadata,
       };
     }).filter(project => project.title);
+
+    return projects
+      .sort((a, b) => {
+        const orderA = a.order ?? Infinity;
+        const orderB = b.order ?? Infinity;
+        return orderA - orderB;
+      })
+      .slice(skip, skip + limit);
   } catch (e) {
     console.error('Error reading projects:', e);
     return [];
