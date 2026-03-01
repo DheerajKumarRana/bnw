@@ -2,9 +2,11 @@
 import Link from "next/link";
 import React, { useState, useMemo } from "react";
 import Slider from "react-slick";
+import { usePopup } from "@/providers/PopupProvider";
 
 const PremiumDevelopments = () => {
     const [activeCategory, setActiveCategory] = useState("All properties");
+    const { openPopup } = usePopup();
 
     const NextArrow = ({ onClick }) => (
         <button
@@ -151,7 +153,9 @@ const PremiumDevelopments = () => {
                     <button className="thm-btn bg-white !text-black border-white hover:bg-black hover:!text-white !w-full md:!w-[280px] !h-[60px]">
                         Chat on WhatsApp
                     </button>
-                    <button className="thm-btn thm-btn-gold !w-full md:!w-[280px] !h-[60px]">
+                    <button
+                        onClick={openPopup}
+                        className="thm-btn thm-btn-gold !w-full md:!w-[280px] !h-[60px]">
                         Register your interest
                     </button>
                 </div>

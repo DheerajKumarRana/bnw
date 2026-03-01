@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
 import Link from "next/link";
+import { usePopup } from "@/providers/PopupProvider";
 
 const LatestLaunch = () => {
+    const { openPopup } = usePopup();
     const projects = [
         {
             title: "Tonino Lamborghini Residences",
@@ -45,7 +48,9 @@ const LatestLaunch = () => {
                             </Link>
 
                             {/* Register Button - Always Gold Box */}
-                            <button className="order-1 md:order-2 thm-btn thm-btn-gold !w-full md:!w-[280px] !h-[60px] text-[12px] md:text-xs font-bold tracking-[0.2em]">
+                            <button
+                                onClick={openPopup}
+                                className="order-1 md:order-2 thm-btn thm-btn-gold !w-full md:!w-[280px] !h-[60px] text-[12px] md:text-xs font-bold tracking-[0.2em]">
                                 REGISTER YOUR INTEREST
                             </button>
                         </div>

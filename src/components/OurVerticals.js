@@ -2,8 +2,10 @@
 import React from "react";
 import Slider from "react-slick";
 import Blogs from "@/components/Blogs";
+import { usePopup } from "@/providers/PopupProvider";
 
 const OurVerticals = ({ articles, showCTA = true }) => {
+    const { openPopup } = usePopup();
     const settings = {
         dots: false,
         infinite: true,
@@ -123,7 +125,8 @@ const OurVerticals = ({ articles, showCTA = true }) => {
                                             </label>
                                         </div>
                                         <button
-                                            type="submit"
+                                            type="button"
+                                            onClick={openPopup}
                                             className="thm-btn-gold w-full py-4 uppercase font-bold text-sm tracking-widest mt-4 hover:bg-white hover:text-black transition-all duration-500 shadow-lg"
                                         >
                                             Submit

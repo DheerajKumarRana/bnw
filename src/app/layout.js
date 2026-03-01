@@ -1,5 +1,6 @@
 import { Noto_Serif_Display, Lato } from "next/font/google";
 import "./globals.css";
+import { PopupProvider } from "@/providers/PopupProvider";
 
 const notoSerif = Noto_Serif_Display({
   variable: "--font-noto-serif",
@@ -21,7 +22,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${lato.variable} ${notoSerif.variable}`}>
-        {children}
+        <PopupProvider>
+          {children}
+        </PopupProvider>
       </body>
     </html>
   );
