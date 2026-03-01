@@ -143,7 +143,21 @@
     .rbr-heading {
         font-size: 24px;
     }
+
+    .rbr-actions-row {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .rbr-btn {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        display: block;
+    }
 }
+
 
 
 /* Hero Section */
@@ -289,6 +303,7 @@
     .prox-section {
         padding: 20px 1.5rem;
     }
+
     .prox-grid {
         grid-template-columns: 1fr;
     }

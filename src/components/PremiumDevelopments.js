@@ -148,10 +148,10 @@ const PremiumDevelopments = () => {
             <div className="container mx-auto px-5 mt-4 md:mt-10 mb-8 md:mb-12">
                 {/* Top Action Buttons */}
                 <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-16 md:mb-20">
-                    <button className="thm-btn bg-white !text-black border-white hover:bg-black hover:!text-white !w-full md:!w-[250px]">
+                    <button className="thm-btn bg-white !text-black border-white hover:bg-black hover:!text-white !w-full md:!w-[280px] !h-[60px]">
                         Chat on WhatsApp
                     </button>
-                    <button className="thm-btn thm-btn-gold !w-full md:!w-[250px]">
+                    <button className="thm-btn thm-btn-gold !w-full md:!w-[280px] !h-[60px]">
                         Register your interest
                     </button>
                 </div>

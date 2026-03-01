@@ -119,15 +119,15 @@ const Footer = () => {
                             <div className="flex gap-4 items-start mt-6 xl:mt-0 xl:ml-6">
                                 {/* Construction Week - Red Box */}
                                 <div className="w-[115px] h-[61px]">
-                                    <img src="/footer-award-1.jpg" alt="Construction Week" className="w-full h-full object-contain" />
+                                    <img src="/footer-award-1.jpg" alt="Construction Week" className="w-full h-full object-contain object-left-top" />
                                 </div>
                                 {/* Great Place to Work */}
                                 <div className="h-[61px] w-auto">
-                                    <img src="/footer-award-2.png" alt="Great Place to Work" className="w-full h-full object-contain" />
+                                    <img src="/footer-award-2.png" alt="Great Place to Work" className="w-full h-full object-contain object-left-top" />
                                 </div>
                                 {/* Property Awards - Tall Ribbon */}
                                 <div className="w-[80px] h-[280px] relative">
-                                    <img src="/footer-award-3.png" alt="Property Awards" className="w-full h-full object-contain drop-shadow-lg" />
+                                    <img src="/footer-award-3.png" alt="Property Awards" className="w-full h-full object-contain object-left-top drop-shadow-lg" />
                                 </div>
                             </div>
                         </div>

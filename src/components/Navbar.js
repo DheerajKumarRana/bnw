@@ -4,9 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Phone, Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -115,10 +117,12 @@ const Navbar = () => {
                             {/* EN Dropdown and Menu container for alignment */}
                             <div className="flex items-start gap-4 h-full">
                                 {/* EN Dropdown */}
-                                <div className="hidden lg:flex items-center justify-center border border-white/30 rounded-full px-4 py-1 cursor-pointer hover:border-[#daaf7d] transition-colors h-[28px] mt-6 md:mt-8">
-                                    <span className="text-[10px] text-white font-bold mr-1">EN</span>
-                                    <svg width="6" height="6" viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5z" /></svg>
-                                </div>
+                                {pathname !== "/" && (
+                                    <div className="hidden lg:flex items-center justify-center border border-white/30 rounded-full px-4 py-1 cursor-pointer hover:border-[#daaf7d] transition-colors h-[28px] mt-6 md:mt-8">
+                                        <span className="text-[10px] text-white font-bold mr-1">EN</span>
+                                        <svg width="6" height="6" viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5z" /></svg>
+                                    </div>
+                                )}
 
                                 {/* Badges - Desktop Only */}
                                 <div className="hidden xl:flex items-start gap-2 h-full">

@@ -89,13 +89,13 @@ a {
   height: 100%;
   z-index: -1;
   transform: scaleX(0);
-  transform-origin: right;
+  transform-origin: left;
   transition: transform 0.5s ease;
 }
 
 .thm-btn:hover::before {
   transform: scaleX(1);
-  transform-origin: left;
+  transform-origin: right;
 }
 
 /* Black Button (Fills White) */
@@ -162,7 +162,7 @@ a {
   transform-origin: left;
 }
 
-/* Gold Button (Solid Fills White or Gold? - User asked for fill animation) */
+/* Gold Button */
 .thm-btn-gold {
   background-color: #daaf7d;
   border-color: #daaf7d;
@@ -170,11 +170,11 @@ a {
 }
 
 .thm-btn-gold::before {
-  background-color: #fff;
+  background: radial-gradient(18.62% 119.64% at 105.26% 119.64%, rgba(255, 250, 240, .41) 0, hsla(39, 65%, 64%, .41) 100%), radial-gradient(30.77% 108.93% at -8.5% -33.93%, hsla(0, 0%, 100%, .41) 0, hsla(39, 65%, 64%, .41) 100%), radial-gradient(32.02% 32.09% at 51.45% 86.93%, #fff7e7 0, #dfb569 86.4%);
 }
 
 .thm-btn-gold:hover {
-  color: #daaf7d;
+  color: #000;
 }
 
 /* Gold Outline Button (Transparent, Fills Gold) */
@@ -246,14 +246,15 @@ a {
 /* Project listing */
 
 @keyframes arrowBounce {
-    0%,
-    100% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
 
-    50% {
-        transform: translateY(10px);
-        opacity: 0.5;
-    }
+  0%,
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
 }
