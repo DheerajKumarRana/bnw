@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 
-export default function RegisterInterestPopup({ onClose }) {
+export default function RegisterInterestPopup({ onClose, projectName = "" }) {
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
@@ -30,12 +30,18 @@ export default function RegisterInterestPopup({ onClose }) {
         setSubmitMessage("");
 
         try {
+            const payload = {
+                ...formData,
+                message: projectName ? `Submitted from Popup on Project: ${projectName} \n\n${formData.message}` : formData.message,
+                projectName: projectName // Optional: passing as dedicated field
+            };
+
             const response = await fetch("/api/submit-interest", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(payload),
             });
 
             const data = await response.json();

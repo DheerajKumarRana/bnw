@@ -1,8 +1,11 @@
 "use client";
 import React from "react";
+import { usePopup } from "@/providers/PopupProvider";
 import { CheckCircle2, Key, BarChart3, MapPin, Trophy, Activity, FileCheck, Gem } from "lucide-react";
 
 const WhyBNW = () => {
+    const { openPopup } = usePopup();
+
     const features = [
         {
             icon: <CheckCircle2 className="w-[34px] h-[35px] text-[#daaf7d] stroke-[1.2px]" />,
@@ -65,7 +68,7 @@ const WhyBNW = () => {
                         <p className="text-[#57575E] text-[12px] md:text-[14px] mb-8 md:mb-12 leading-[1.8] pb-2">
                             Each project is strategically located, intelligently planned, and crafted with finishes that meet the world's most refined tastes. From capital appreciation to regulatory confidence, BNW offers a rare blend of luxury and logic, built for today's global investor.
                         </p>
-                        <button className="bg-[#000A0D] text-white w-full md:w-[250px] md:h-[58px] py-4 md:py-0 text-[12px] font-bold tracking-[0.25em] hover:bg-[#DAAF7D] transition-all duration-500 uppercase mt-5">
+                        <button onClick={openPopup} className="bg-[#000A0D] text-white w-full md:w-[250px] md:h-[58px] py-4 md:py-0 text-[12px] font-bold tracking-[0.25em] hover:bg-[#DAAF7D] transition-all duration-500 uppercase mt-5">
                             INVEST WITH BNW
                         </button>
                     </div>

@@ -1,11 +1,76 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import Blogs from "@/components/Blogs";
 import { usePopup } from "@/providers/PopupProvider";
+import { PhoneInput } from 'react-international-phone';
+import 'react-international-phone/style.css';
 
 const OurVerticals = ({ articles, showCTA = true }) => {
     const { openPopup } = usePopup();
+
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        phoneNumber: "",
+        agreedToTerms: false,
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState("");
+
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: type === "checkbox" ? checked : value,
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!formData.agreedToTerms) {
+            setSubmitMessage("Please agree to the privacy policy.");
+            return;
+        }
+
+        setIsSubmitting(true);
+        setSubmitMessage("");
+
+        const payload = {
+            ...formData,
+            apartmentType: "",
+            message: "Submitted from Our Verticals Form",
+        };
+
+        try {
+            const response = await fetch("/api/submit-interest", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setSubmitMessage("Thank you for your interest! We will contact you soon.");
+                setFormData({
+                    fullName: "",
+                    email: "",
+                    phoneNumber: "",
+                    agreedToTerms: false,
+                });
+            } else {
+                setSubmitMessage(`Failed to submit: ${data.message || "Unknown error"}`);
+            }
+        } catch (error) {
+            setSubmitMessage("An error occurred while submitting the form. Please try again later.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     const settings = {
         dots: false,
         infinite: true,
@@ -20,11 +85,11 @@ const OurVerticals = ({ articles, showCTA = true }) => {
             },
             {
                 breakpoint: 768,
-                settings: { slidesToShow: 2, slidesToScroll: 1 }
+                settings: { slidesToShow: 1, slidesToScroll: 1 } // Mobile breakpoint
             },
             {
                 breakpoint: 480,
-                settings: { slidesToShow: 2, slidesToScroll: 1 }
+                settings: { slidesToShow: 1, slidesToScroll: 1 } // Small mobile breakpoint
             }
         ]
     };
@@ -89,34 +154,60 @@ const OurVerticals = ({ articles, showCTA = true }) => {
 
                             {/* 3. Registration Form (Right) */}
                             <div className="w-full">
-                                <form className="flex flex-col gap-4 max-w-md mx-auto lg:ml-auto lg:mr-0">
+                                <form className="flex flex-col gap-4 max-w-md mx-auto lg:ml-auto lg:mr-0" onSubmit={handleSubmit}>
                                     <div className="space-y-4">
                                         <input
                                             type="text"
+                                            name="fullName"
+                                            value={formData.fullName}
+                                            onChange={handleChange}
+                                            required
                                             placeholder="Full Name"
                                             className="w-full bg-transparent border border-white/20 p-4 text-white outline-none focus:border-[#daaf7d] transition-colors"
                                         />
                                         <input
                                             type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            required
                                             placeholder="Email"
                                             className="w-full bg-transparent border border-white/20 p-4 text-white outline-none focus:border-[#daaf7d] transition-colors"
                                         />
-                                        <div className="flex border border-white/20 focus-within:border-[#daaf7d] transition-colors">
-                                            <div className="flex items-center px-4 border-r border-white/10 gap-2">
-                                                <img src="https://flagcdn.com/w20/ae.png" alt="UAE Flag" className="w-5" />
-                                                <span className="text-white text-sm">+971</span>
-                                                <svg className="w-3 h-3 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                                            </div>
-                                            <input
-                                                type="tel"
-                                                placeholder="Phone"
-                                                className="w-full bg-transparent p-4 text-white outline-none"
+                                        <style dangerouslySetInnerHTML={{
+                                            __html: `
+                                            .dark-phone-input .react-international-phone-input {
+                                                width: 100%;
+                                                padding: 16px;
+                                                font-size: 14px;
+                                                border: none;
+                                                outline: none;
+                                                color: white;
+                                                background-color: transparent;
+                                            }
+                                            .dark-phone-input .react-international-phone-country-selector-button {
+                                                padding: 0 16px;
+                                                border: none;
+                                                border-right: 1px solid rgba(255,255,255,0.1);
+                                                height: 100%;
+                                                background-color: transparent !important;
+                                            }
+                                        `}} />
+                                        <div className="bg-transparent border border-white/20 focus-within:border-[#daaf7d] transition-colors dark-phone-input">
+                                            <PhoneInput
+                                                defaultCountry="ae"
+                                                value={formData.phoneNumber}
+                                                onChange={(phone) => setFormData(prev => ({ ...prev, phoneNumber: phone }))}
+                                                required
                                             />
                                         </div>
                                         <div className="flex items-start gap-3 mt-4">
                                             <input
                                                 type="checkbox"
                                                 id="privacy"
+                                                name="agreedToTerms"
+                                                checked={formData.agreedToTerms}
+                                                onChange={handleChange}
                                                 required
                                                 className="mt-1 accent-[#daaf7d]"
                                             />
@@ -125,12 +216,17 @@ const OurVerticals = ({ articles, showCTA = true }) => {
                                             </label>
                                         </div>
                                         <button
-                                            type="button"
-                                            onClick={openPopup}
-                                            className="thm-btn-gold w-full py-4 uppercase font-bold text-sm tracking-widest mt-4 hover:bg-white hover:text-black transition-all duration-500 shadow-lg"
+                                            type="submit"
+                                            disabled={isSubmitting}
+                                            className="thm-btn-gold w-full py-4 uppercase font-bold text-sm tracking-widest mt-4 hover:bg-white hover:text-black transition-all duration-500 shadow-lg disabled:opacity-50"
                                         >
-                                            Submit
+                                            {isSubmitting ? "SUBMITTING..." : "SUBMIT"}
                                         </button>
+                                        {submitMessage && (
+                                            <div className={`mt-2 p-2 text-center text-xs rounded ${submitMessage.includes("Thank you") ? 'bg-green-100/20 text-green-400' : 'bg-red-100/20 text-red-400'}`}>
+                                                {submitMessage}
+                                            </div>
+                                        )}
                                     </div>
                                 </form>
                             </div>

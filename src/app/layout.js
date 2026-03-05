@@ -1,5 +1,7 @@
 import { Noto_Serif_Display, Lato } from "next/font/google";
 import "./globals.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { PopupProvider } from "@/providers/PopupProvider";
 
 const notoSerif = Noto_Serif_Display({

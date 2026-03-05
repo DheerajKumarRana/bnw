@@ -12,18 +12,18 @@ const Hero = () => {
                         className="w-full h-auto"
                     />
                 </div>
-                <div className="container mx-auto px-5 mt-8">
+                <div className="container mx-auto px-5 mt-4">
                     <div className="flex flex-col items-start justify-between gap-6">
                         <div className="basis-10/12">
-                            <h1 className="flex flex-col sm:max-w-xl text-3xl md:text-4xl font-noto font-medium leading-tight">
+                            <h1 className="flex flex-col sm:max-w-xl text-3xl font-noto font-medium leading-snug">
                                 <span className="text-white inline-block">
                                     Legacy that <i>Leads</i>
                                 </span>
-                                <span className="text-white text-right inline-block">
+                                <span className="text-white text-right inline-block mt-2">
                                     Innovation that <i>Lasts</i>
                                 </span>
                             </h1>
-                            <p className="mt-4 font-normal text-[#f5f5f5] text-sm leading-relaxed">
+                            <p className="mt-6 font-normal text-[#f5f5f5] text-sm leading-relaxed">
                                 With a premier real estate Gross Development Value of AED 32
                                 billion, BNW is shaping the UAE's most iconic skylines, from the
                                 tranquil shores of Ras Al Khaimah to the rising verticals of

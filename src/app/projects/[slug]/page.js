@@ -40,15 +40,15 @@ export default async function SingleProjectPage({ params }) {
 
   return (
     <>
-      <SingleListingHero project={ project } />
+      <SingleListingHero project={project} />
       <div className="min-h-screen bg-stone-50">
         <main className="mx-auto py-4">
-          { project.contentHtml && (
-            <ProjectContent html={ project.contentHtml } />
-          ) }
+          {project.contentHtml && (
+            <ProjectContent html={project.contentHtml} />
+          )}
         </main>
       </div>
-      <ProjectForm />
+      <ProjectForm projectName={project.title} />
     </>
   );
 }

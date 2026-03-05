@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import WynnSection from "@/components/WynnSection";
 import Introduction from "@/components/Introduction";
 import LogoSlider from "@/components/LogoSlider";
 import Collaboration from "@/components/Collaboration";
@@ -18,13 +19,14 @@ export default async function Home() {
     <main className="bg-white min-h-screen">
       <Navbar />
       <Hero />
+      <WynnSection />
       <Introduction />
       <LogoSlider />
       <Collaboration />
       <LatestLaunch />
       <PremiumDevelopments />
       <WhyBNW />
-      <OurVerticals articles={ articles } />
+      <OurVerticals articles={articles} />
       <Footer />
     </main>
   );

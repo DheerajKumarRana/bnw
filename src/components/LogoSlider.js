@@ -1,10 +1,16 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const LogoSlider = () => {
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
     const settings = {
         dots: false,
         infinite: true,
@@ -36,12 +42,18 @@ const LogoSlider = () => {
                 },
             },
             {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 2,
-                },
-            },
-        ],
+                }
+            }
+        ]
     };
 
     const awards = [
@@ -58,6 +70,8 @@ const LogoSlider = () => {
         { img: "/s11.png", text: "Top Branded Residential Project - International Property Award 2023" },
         { img: "/s12.png", text: "Luxury Lifestyle Award 2023 - Best Luxury Innovative Real Estate Developer" }
     ];
+
+    if (!isMounted) return null;
 
     return (
         <section className="py-16 md:py-20 bg-[#f1f1f1] overflow-hidden">

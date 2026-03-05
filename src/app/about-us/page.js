@@ -39,8 +39,8 @@ export default function AboutUsPage() {
                         </div>
                     </div>
 
-                    <div className="relative z-10 container mx-auto px-5 text-center mt-20">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-serif leading-tight max-w-4xl mx-auto">
+                    <div className="relative z-10 container mx-auto px-5 text-center mt-32 md:mt-20">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-serif leading-snug md:leading-tight max-w-4xl mx-auto drop-shadow-lg">
                             At BNW Developments, luxury is not just a <br className="hidden lg:block" /> promise; it is a hallmark.
                         </h1>
                     </div>
@@ -189,13 +189,13 @@ export default function AboutUsPage() {
                 <section className="py-20 bg-black">
                     <div className="container mx-auto px-5">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <Link href="#" className="border border-white/10 hover:border-[#daaf7d] bg-[#0a0a0a] transition-colors p-10 flex items-center justify-center group h-40">
+                            <Link href="/about-us/team" className="border border-white/10 hover:border-[#daaf7d] bg-[#0a0a0a] transition-colors p-10 flex items-center justify-center group h-40">
                                 <h4 className="text-2xl font-serif text-white group-hover:text-[#daaf7d] transition-colors text-center tracking-widest">Our<br />team</h4>
                             </Link>
-                            <Link href="#" className="border border-white/10 hover:border-[#daaf7d] bg-[#0a0a0a] transition-colors p-10 flex items-center justify-center group h-40">
+                            <Link href="/about-us/leadership" className="border border-white/10 hover:border-[#daaf7d] bg-[#0a0a0a] transition-colors p-10 flex items-center justify-center group h-40">
                                 <h4 className="text-2xl font-serif text-white group-hover:text-[#daaf7d] transition-colors text-center tracking-widest">Our<br />leadership</h4>
                             </Link>
-                            <Link href="#" className="border border-white/10 hover:border-[#daaf7d] bg-[#0a0a0a] transition-colors p-10 flex items-center justify-center group h-40">
+                            <Link href="/news" className="border border-white/10 hover:border-[#daaf7d] bg-[#0a0a0a] transition-colors p-10 flex items-center justify-center group h-40">
                                 <h4 className="text-2xl font-serif text-white group-hover:text-[#daaf7d] transition-colors text-center tracking-widest">News &<br />media</h4>
                             </Link>
                             <Link href="#" className="border border-white/10 hover:border-[#daaf7d] bg-[#0a0a0a] transition-colors p-10 flex items-center justify-center group h-40">

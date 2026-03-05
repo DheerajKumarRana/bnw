@@ -87,15 +87,15 @@ export default function ProjectCard({ project }) {
 
                         <div className="flex flex-col sm:flex-row gap-3">
                             <button
-                                onClick={openPopup}
-                                className="group bg-white text-black font-lato font-bold relative px-8 py-3 text-xs tracking-[0.2em] uppercase overflow-hidden transition-all duration-300"
+                                onClick={() => openPopup(project.title || "Project Page")}
+                                className="group bg-white text-black font-lato font-bold relative px-8 py-3 text-xs tracking-[0.2em] uppercase overflow-hidden transition-all duration-300 text-center"
                             >
                                 Register Your Interest
                             </button>
 
                             <Link
                                 href={`/projects/${project.slug}`}
-                                className="px-8 py-3 text-xs tracking bg-transparent text-white font-lato font-bold border border-white uppercase transition-all duration-300"
+                                className="px-8 py-3 text-xs tracking bg-transparent text-white font-lato font-bold border border-white uppercase transition-all duration-300 text-center"
                             >
                                 View Project
                             </Link>

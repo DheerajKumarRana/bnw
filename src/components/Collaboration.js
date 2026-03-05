@@ -24,12 +24,12 @@ const Collaboration = () => {
                 </div>
 
                 {/* Partners Grid */}
-                <div className="w-full lg:w-[55%] grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                <div className="w-full lg:w-[55%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 xl:gap-4">
                     {partners.map((partner, index) => (
                         <div
                             key={index}
-                            className={`flex items-center justify-center border border-[#daaf7d] border-opacity-30 rounded-lg p-6 bg-white hover:shadow-lg transition-all duration-300 h-[100px] md:h-[120px] ${index === partners.length - 1 && partners.length % 2 !== 0
-                                    ? "col-span-2 md:col-span-2 lg:col-span-1 lg:max-w-none max-w-[50%] mx-auto w-full"
+                            className={`flex items-center justify-center border border-[#daaf7d] border-opacity-30 rounded-lg p-4 bg-white hover:shadow-lg transition-all duration-300 aspect-square ${index === partners.length - 1 && partners.length % 2 !== 0
+                                    ? "col-span-2 md:col-span-1 mx-auto w-full max-w-[50%] md:max-w-none"
                                     : ""
                                 }`}
                         >
