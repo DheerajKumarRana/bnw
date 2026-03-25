@@ -22,6 +22,41 @@ const Footer = () => {
         }
     };
 
+    const [newsletterEmail, setNewsletterEmail] = React.useState("");
+    const [newsletterStatus, setNewsletterStatus] = React.useState("");
+    const [isSubmittingNewsletter, setIsSubmittingNewsletter] = React.useState(false);
+
+    const handleNewsletterSubmit = async (e) => {
+        e.preventDefault();
+        if (!newsletterEmail) return;
+
+        setIsSubmittingNewsletter(true);
+        setNewsletterStatus("");
+
+        try {
+            const response = await fetch("/api/submit-interest", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    email: newsletterEmail,
+                    formType: "Newsletter",
+                    message: "Subscribed to newsletter from footer"
+                })
+            });
+
+            if (response.ok) {
+                setNewsletterStatus("Thank you for subscribing!");
+                setNewsletterEmail("");
+            } else {
+                setNewsletterStatus("Failed to subscribe. Please try again.");
+            }
+        } catch (error) {
+            setNewsletterStatus("An error occurred. Please try again later.");
+        } finally {
+            setIsSubmittingNewsletter(false);
+        }
+    };
+
     return (
         <footer className="bg-[#151515] text-white pt-20 pb-10 relative border-t border-gray-800">
             <div className="container mx-auto px-6">
@@ -120,16 +155,22 @@ const Footer = () => {
                         {/* Newsletter */}
                         <div className="mt-12 w-full max-w-md">
                             <p className="text-sm font-light text-white mb-4">Subscribe to our newsletter</p>
-                            <div className="relative border-b border-gray-700 pb-2 flex justify-between items-center group focus-within:border-[#daaf7d] transition-colors">
+                            <form onSubmit={handleNewsletterSubmit} className="relative border-b border-gray-700 pb-2 flex justify-between items-center group focus-within:border-[#daaf7d] transition-colors">
                                 <input
                                     type="email"
+                                    value={newsletterEmail}
+                                    onChange={(e) => setNewsletterEmail(e.target.value)}
                                     placeholder="Email Address"
+                                    required
                                     className="bg-transparent w-full outline-none text-white text-sm placeholder-gray-500"
                                 />
-                                <button className="text-white hover:text-[#daaf7d] transition-colors">
+                                <button type="submit" disabled={isSubmittingNewsletter} className="text-white hover:text-[#daaf7d] transition-colors disabled:opacity-50">
                                     <ArrowRight size={20} />
                                 </button>
-                            </div>
+                            </form>
+                            {newsletterStatus && (
+                                <p className="text-xs mt-2 text-[#daaf7d]">{newsletterStatus}</p>
+                            )}
                         </div>
 
                         {/* Socials */}
